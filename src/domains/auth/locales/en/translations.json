@@ -1,0 +1,25 @@
+{
+  "title": "Registration",
+  "login": {
+    "title": "Login"
+  },
+  "registration": {
+    "title": "Registration"
+  },
+  "forms": {
+    "inputs": {
+      "role": {
+        "title": "Who are You?",
+        "student": "Student",
+        "teacher": "Teacher"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "patronymic": "Patronymic",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "group": "Group"
+    }
+  }
+}

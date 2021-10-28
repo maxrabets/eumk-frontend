@@ -1,0 +1,25 @@
+{
+  "title": "Регистрация",
+  "login": {
+    "title": "Вход"
+  },
+  "registration": {
+    "title": "Регистрация"
+  },
+  "forms": {
+    "inputs": {
+      "role": {
+        "title": "Кто Вы?",
+        "student": "Студент",
+        "teacher": "Преподаватель"
+      },
+      "name": "Имя",
+      "surname": "Фамилия",
+      "patronymic": "Отчество",
+      "email": "Электронная почта",
+      "password": "Пароль",
+      "confirmPassword": "Повторите пароль",
+      "group": "Группа"
+    }
+  }
+}

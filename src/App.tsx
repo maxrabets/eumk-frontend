@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+import LoginPage from "pages/LoginPage";
+import { URLs } from "common/constants";
+import { MainPageWrapper } from "pages/common";
+import RegistrationPage from "pages/RegistrationPage";
+import SubjectsPage from "pages/SubjectsPage";
+import SubjectPage from "./pages/SubjectPage";
+import EumkPage from "./pages/EUMKPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <Switch>
+              <MainPageWrapper>
+                  <Route path={ URLs.LOGIN }>
+                      <LoginPage />
+                  </Route>
+                  <Route path={ URLs.REGISTRATION }>
+                      <RegistrationPage />
+                  </Route>
+                  <Route exact path={ URLs.SUBJECTS + ":subjectId/:eumkId" }>
+                      <EumkPage />
+                  </Route>
+                  <Route exact path={ URLs.SUBJECTS + ":subjectId" }>
+                      <SubjectPage />
+                  </Route>
+                  <Route exact path={ URLs.SUBJECTS }>
+                      <SubjectsPage />
+                  </Route>
+              </MainPageWrapper>
+          </Switch>
+      </Router>
   );
 }
 

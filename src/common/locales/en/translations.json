@@ -1,0 +1,8 @@
+{
+  "title": "Welcome to React and react-i18next",
+  "forms": {
+    "buttons": {
+      "submit": "Submit"
+    }
+  }
+}
