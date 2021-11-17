@@ -11,12 +11,13 @@
       "role": {
         "title": "Who are You?",
         "student": "Student",
+        "administrator": "Administrator",
         "teacher": "Teacher"
       },
       "name": "Name",
       "surname": "Surname",
       "patronymic": "Patronymic",
-      "email": "Email",
+      "login": "Login",
       "password": "Password",
       "confirmPassword": "Confirm Password",
       "group": "Group"

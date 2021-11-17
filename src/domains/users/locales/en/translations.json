@@ -1,0 +1,14 @@
+{
+  "title": "Users",
+  "user": {
+    "login": "Login",
+    "role": "Role",
+    "registrationDate": "Registration date",
+    "lastLoginDate": "Last login date",
+    "delete": "Delete",
+    "edit": "Edit",
+    "details": {
+      "title": "User details"
+    }
+  }
+}

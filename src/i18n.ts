@@ -7,6 +7,8 @@ import enAuth from "domains/auth/locales/en/translations.json";
 import ruAuth from "domains/auth/locales/ru/translations.json";
 import ruSubjects from "domains/subjects/locales/ru/translations.json";
 import enSubjects from "domains/subjects/locales/en/translations.json";
+import enUsers from "domains/users/locales/en/translations.json";
+import ruUsers from "domains/users/locales/ru/translations.json";
 
 
 const resources = {
@@ -14,11 +16,13 @@ const resources = {
         common: enCommon,
         auth: enAuth,
         subjects: enSubjects,
+        users: enUsers,
     },
     ru: {
         common: ruCommon,
         auth: ruAuth,
         subjects: ruSubjects,
+        users: ruUsers,
     },
 };
 

@@ -22,6 +22,9 @@ const NavigationMenu: FC = () => {
             <Button component={ Link } to={ URLs.REGISTRATION } variant="text">
                 { t("registration.title", { ns: "auth" }) }
             </Button>
+            <Button component={ Link } to={ URLs.USERS } variant="text">
+                { t("title", { ns: "users" }) }
+            </Button>
         </AppBar>
     );
 };

@@ -1,5 +1,8 @@
 {
   "title": "Welcome to React and react-i18next",
+  "validation": {
+    "requiredFiled": "This field is required"
+  },
   "forms": {
     "buttons": {
       "submit": "Submit"

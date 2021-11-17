@@ -1,5 +1,8 @@
 {
   "title": "Добро пожаловать в React и react-i18next",
+  "validation": {
+    "requiredFiled": "Это обязательное поле"
+  },
   "forms": {
     "buttons": {
       "submit": "Подтвердить"

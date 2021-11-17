@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { useTranslation } from "react-i18next";
+import { useFormik } from "formik";
 import {
     Button,
     FormControl,
@@ -8,43 +10,40 @@ import {
     Radio,
     RadioGroup,
     TextField,
+    Typography,
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { useFormik } from "formik";
 
-import { register } from "domains/auth/shared/auth.api.service";
+import { IUserDetails, Role } from "domains/users/shared/types";
 import { validationSchema } from "./validationSchema";
-import { Role } from "domains/users/shared/types";
+
 
 interface IProps {
-    className?: string;
+    user: IUserDetails,
+    onSubmit: (values: IUserDetails) => void,
+    className?: string,
 }
 
-const RegistrationForm: FC<IProps> = ({ className }) => {
-    const { t } = useTranslation("common");
+const UserDetailsForm: FC<IProps> = ({ user, onSubmit, className }) => {
+    const { t } = useTranslation("users");
 
     const formik = useFormik({
         initialValues: {
-            role: Role.Student,
-            surname: "",
-            name: "",
-            patronymic: "",
-            login: "",
-            group: "",
-            password: "",
-            confirmPassword: "",
+            role: user.role,
+            surname: user.surname,
+            name: user.name,
+            patronymic: user.patronymic || "",
+            login: user.login,
+            group: user.group || "",
         },
         validationSchema,
-        onSubmit: async (values) => {
-            console.log(values);
-            const result = await register(values);
-            console.log(result);
-        },
+        onSubmit,
     });
 
     return (
         <div className={ className }>
-            <h1>{ t("title", { ns: "auth" }) }</h1>
+            <h1>{ t("user.details.title") + ": " + user.login }</h1>
+            <Typography>{ t("user.registrationDate") + ": " + user.registrationDate }</Typography>
+            <Typography>{ t("user.lastLoginDate") + ": " + user.lastLoginDate }</Typography>
             <form className="vertical-form" onSubmit={ formik.handleSubmit }>
                 <FormControl component="fieldset">
                     <FormLabel component="legend">{ t("forms.inputs.role.title", { ns: "auth" }) }</FormLabel>
@@ -57,16 +56,25 @@ const RegistrationForm: FC<IProps> = ({ className }) => {
                         } }
                     >
                         <FormControlLabel
+                            disabled
                             name="role"
                             value={ Role.Student }
                             control={ <Radio /> }
                             label={ t("forms.inputs.role.student", { ns: "auth" }) }
                         />
                         <FormControlLabel
+                            disabled
                             name="role"
                             value={ Role.Teacher }
                             control={ <Radio /> }
                             label={ t("forms.inputs.role.teacher", { ns: "auth" }) }
+                        />
+                        <FormControlLabel
+                            disabled
+                            name="role"
+                            value={ Role.Administrator }
+                            control={ <Radio /> }
+                            label={ t("forms.inputs.role.administrator", { ns: "auth" }) }
                         />
                     </RadioGroup>
                 </FormControl>
@@ -108,35 +116,17 @@ const RegistrationForm: FC<IProps> = ({ className }) => {
                 />
                 {
                     formik.values.role === Role.Student && (
-                    <TextField
-                        fullWidth
-                        name="group"
-                        label={ t("forms.inputs.group", { ns: "auth" }) }
-                        value={ formik.values.group }
-                        onChange={ formik.handleChange }
-                        error={ formik.touched.group && Boolean(formik.errors.group) }
-                        helperText={ formik.touched.group && formik.errors.group }
-                    />
+                        <TextField
+                            fullWidth
+                            name="group"
+                            label={ t("forms.inputs.group", { ns: "auth" }) }
+                            value={ formik.values.group }
+                            onChange={ formik.handleChange }
+                            error={ formik.touched.group && Boolean(formik.errors.group) }
+                            helperText={ formik.touched.group && formik.errors.group }
+                        />
                     )
                 }
-                <TextField
-                    fullWidth
-                    name="password"
-                    label={ t("forms.inputs.password", { ns: "auth" }) }
-                    value={ formik.values.password }
-                    onChange={ formik.handleChange }
-                    error={ formik.touched.password && Boolean(formik.errors.password) }
-                    helperText={ formik.touched.password && formik.errors.password }
-                />
-                <TextField
-                    fullWidth
-                    name="confirmPassword"
-                    label={ t("forms.inputs.confirmPassword", { ns: "auth" }) }
-                    value={ formik.values.confirmPassword }
-                    onChange={ formik.handleChange }
-                    error={ formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword) }
-                    helperText={ formik.touched.confirmPassword && formik.errors.confirmPassword }
-                />
                 <Button variant="contained" type="submit">
                     { t("forms.buttons.submit", { ns: "common" }) }
                 </Button>
@@ -145,4 +135,4 @@ const RegistrationForm: FC<IProps> = ({ className }) => {
     );
 };
 
-export default RegistrationForm;
+export default UserDetailsForm;

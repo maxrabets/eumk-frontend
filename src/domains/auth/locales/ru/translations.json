@@ -11,12 +11,13 @@
       "role": {
         "title": "Кто Вы?",
         "student": "Студент",
+        "administrator": "Администратор",
         "teacher": "Преподаватель"
       },
       "name": "Имя",
       "surname": "Фамилия",
       "patronymic": "Отчество",
-      "email": "Электронная почта",
+      "login": "Логин",
       "password": "Пароль",
       "confirmPassword": "Повторите пароль",
       "group": "Группа"

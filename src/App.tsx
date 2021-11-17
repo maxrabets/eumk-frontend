@@ -13,6 +13,8 @@ import RegistrationPage from "pages/RegistrationPage";
 import SubjectsPage from "pages/SubjectsPage";
 import SubjectPage from "./pages/SubjectPage";
 import EumkPage from "./pages/EUMKPage";
+import UsersPage from "./pages/UsersPage";
+import UserDetailsPage from "./pages/UserDetailsPage";
 
 function App() {
   return (
@@ -33,6 +35,12 @@ function App() {
                   </Route>
                   <Route exact path={ URLs.SUBJECTS }>
                       <SubjectsPage />
+                  </Route>
+                  <Route exact path={ URLs.USERS }>
+                      <UsersPage />
+                  </Route>
+                  <Route exact path={ URLs.USERS + ":userLogin" }>
+                      <UserDetailsPage />
                   </Route>
               </MainPageWrapper>
           </Switch>
