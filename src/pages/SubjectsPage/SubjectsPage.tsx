@@ -8,25 +8,25 @@ import { ISubjectPreview } from "domains/subjects/shared/type";
 import subjectsService from "domains/subjects/shared/subjects.api.service";
 
 const SubjectsPage: FC = () => {
-    const { t } = useTranslation("subjects");
-    const [ subjects, setSubjects ] = useState<ISubjectPreview[]>([]);
+  const { t } = useTranslation("subjects");
+  const [ subjects, setSubjects ] = useState<ISubjectPreview[]>([]);
 
-    useEffect(() => {
-       setSubjects(subjectsService.getSubjects());
-    }, []);
+  useEffect(() => {
+    setSubjects(subjectsService.getSubjects());
+  }, []);
 
-    return (
-        <>
-            <h1>{ t("title", { ns: "subjects" }) }</h1>
-            <ul>
-                { subjects.map(subject => {
-                    return (
-                        <li key={ subject.name } ><Link to={ URLs.SUBJECTS + subject.id }>{ subject.name }</Link></li>
-                    );
-                })}
-            </ul>
-        </>
-    );
+  return (
+    <>
+      <h1>{t("title", { ns: "subjects" })}</h1>
+      <ul>
+        {subjects.map(subject => {
+          return (
+            <li key={ subject.name }><Link to={ URLs.SUBJECTS + subject.id }>{subject.name}</Link></li>
+          );
+        })}
+      </ul>
+    </>
+  );
 };
 
 export default SubjectsPage;

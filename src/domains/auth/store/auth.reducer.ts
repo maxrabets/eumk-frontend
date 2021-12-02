@@ -8,17 +8,17 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-    user: null,
+  user: null,
 };
 
 type TReducer = Reducer<IInitialState, AnyAction>;
 
 export const authReducer: TReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case AUTH_ACTIONS.REGISTER:
-            console.log("register");
-            return state;
-        default:
-            return state;
-    }
+  switch (action.type) {
+  case AUTH_ACTIONS.REGISTER:
+    console.log("register");
+    return state;
+  default:
+    return state;
+  }
 };

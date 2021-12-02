@@ -9,11 +9,11 @@ interface IProps {
 }
 
 const Spinner: FC<IProps> = ({ className }) => {
-    return (
-        <div className={ "spinner " + className }>
-            <CircularProgress />
-        </div>
-    );
+  return (
+    <div className={ "spinner " + className }>
+      <CircularProgress/>
+    </div>
+  );
 };
 
 export default Spinner;

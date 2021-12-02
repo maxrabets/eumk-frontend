@@ -3,9 +3,9 @@ import React, { FC } from "react";
 import { LoginForm } from "domains/auth";
 
 const LoginPage: FC = () => {
-    return (
-        <LoginForm />
-    );
+  return (
+    <LoginForm/>
+  );
 };
 
 export default LoginPage;

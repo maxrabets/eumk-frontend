@@ -12,28 +12,28 @@ import ruUsers from "domains/users/locales/ru/translations.json";
 
 
 const resources = {
-    en: {
-        common: enCommon,
-        auth: enAuth,
-        subjects: enSubjects,
-        users: enUsers,
-    },
-    ru: {
-        common: ruCommon,
-        auth: ruAuth,
-        subjects: ruSubjects,
-        users: ruUsers,
-    },
+  en: {
+    common: enCommon,
+    auth: enAuth,
+    subjects: enSubjects,
+    users: enUsers,
+  },
+  ru: {
+    common: ruCommon,
+    auth: ruAuth,
+    subjects: ruSubjects,
+    users: ruUsers,
+  },
 };
 
 i18n
-    .use(initReactI18next)
-    .init({
-        resources,
-        lng: "ru",
-        interpolation: {
-            escapeValue: false,
-        },
-    });
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: "ru",
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
