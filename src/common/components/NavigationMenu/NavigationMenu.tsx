@@ -25,9 +25,9 @@ const NavigationMenu: FC = () => {
       <Button component={ Link } to={ URLs.USERS } variant="text">
         {t("title", { ns: "users" })}
       </Button>
-      <Button component={ Link } to={ URLs.EUMKS } variant="text">
-                ЭУМК
-      </Button>
+      {/* <Button component={ Link } to={ URLs.EUMKS } variant="text">*/}
+      {/*          ЭУМК*/}
+      {/* </Button>*/}
     </AppBar>
   );
 };

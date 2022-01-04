@@ -1,3 +1,11 @@
-.rich-text-editor {
+.rich-text-editor-wrapper {
   border: 3px solid gray;
+
+  .rich-text-editor-toolbar {
+    border-bottom: 3px solid gray;
+  }
+
+  .rich-text-editor {
+    height: 400px;
+  }
 }

@@ -8,18 +8,17 @@ import "./RichTextEditor.scss";
 
 interface IProps {
     wrapperClassName?: string;
+    editorState: EditorState;
+    setEditorState: React.Dispatch<React.SetStateAction<EditorState>>
 }
 
-const RichTextEditor: FC<IProps> = ({ wrapperClassName }) => {
-  const [ editorState, setEditorState ] = React.useState(
-    () => EditorState.createEmpty(),
-  );
-
+const RichTextEditor: FC<IProps> = ({ wrapperClassName, editorState, setEditorState }) => {
   return (
     <Editor
-      wrapperClassName="rich-text-editor"
+      wrapperClassName="rich-text-editor-wrapper"
       editorState={ editorState }
-      toolbarClassName="rich-text-editor"
+      toolbarClassName="rich-text-editor-toolbar"
+      editorClassName="rich-text-editor"
       onEditorStateChange={ setEditorState }
     />
   );

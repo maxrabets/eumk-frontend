@@ -1,7 +1,9 @@
 .create-eumk-page {
   display: flex;
+  height: 100%;
+  margin: 20px;
 
   .eumk-pages-tree {
-    width:20%;
+    width: 25%;
   }
 }

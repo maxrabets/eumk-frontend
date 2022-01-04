@@ -8,7 +8,7 @@ import { MainPageWrapper } from "pages/common";
 import RegistrationPage from "pages/RegistrationPage";
 import SubjectsPage from "pages/SubjectsPage";
 import SubjectPage from "./pages/SubjectPage";
-import EumkPage from "./pages/EUMKPage";
+// import EumkPage from "./pages/EUMKPage";
 import UsersPage from "./pages/UsersPage";
 import UserDetailsPage from "./pages/UserDetailsPage";
 import CreateEumkPage from "./pages/CreateEumkPage";
@@ -25,7 +25,8 @@ function App() {
             <RegistrationPage/>
           </Route>
           <Route exact path={ URLs.SUBJECTS + ":subjectId/:eumkId" }>
-            <EumkPage/>
+            { /* <EumkPage/> */}
+            <CreateEumkPage/>
           </Route>
           <Route exact path={ URLs.SUBJECTS + ":subjectId" }>
             <SubjectPage/>
@@ -39,9 +40,9 @@ function App() {
           <Route exact path={ URLs.USERS + ":userLogin" }>
             <UserDetailsPage/>
           </Route>
-          <Route exact path={ URLs.EUMKS }>
-            <CreateEumkPage/>
-          </Route>
+          {/* <Route exact path={ URLs.EUMKS }>*/}
+          {/*  <CreateEumkPage/>*/}
+          {/* </Route>*/}
         </MainPageWrapper>
       </Switch>
     </Router>
